@@ -1,20 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      MyAppSkeleton
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <h1 style="text-align: center;">Hola,Bienvenido</h1>
+  <p>Usuario: {{name}}</p>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <h2 style="text-align: center;">Información adicional</h2>
+
+  <ion-item>
+    <label>Nombres: </label>
+    <input [(ngModel)]="nombre" type="text" placeholder="Ingrese nombres">
+  </ion-item>
+  <ion-item>
+    <label>Apellidos: </label>
+    <input [(ngModel)]="apellido" type="text" placeholder="Ingrese Apellidos">
+  </ion-item>
+  <ion-item>
+    <label>Nivel de educación: </label>
+
+    <ion-select [(ngModel)]="educacion" interface="popover" placeholder="Seleccione Nivel">
+      <ion-select-option value="primero">1mer año</ion-select-option>
+      <ion-select-option value="segundo">2do año</ion-select-option>
+      <ion-select-option value="tercero">3cer año</ion-select-option>
+      <ion-select-option value="cuarto">4to año</ion-select-option>
+    </ion-select>
+
+  </ion-item>
+  <ion-item>
+    <label>Fecha de nacimiento: </label>
+    <input [(ngModel)]="fecha" type="date">
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="limpiar()">Limpiar</ion-button>
+    <ion-button (click)="mostrar()">Mostrar</ion-button>
+  </ion-item>
 </ion-content>
+
+<div class="container">
+  <ion-toolbar>
+    <p>Esta App fue desarrollada por Brayan Chávez</p>
+  </ion-toolbar>
+</div>
